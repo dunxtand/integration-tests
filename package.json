@@ -1,0 +1,16 @@
+{
+  "name": "integration-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "dependencies": {
+    "webdriverio": "^4.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "java -jar -Dwebdriver.geckodriver.driver=geckodriver.exe selenium-server-standalone-3.0.1.jar",
+    "test": "node test.js"
+  },
+  "author": "dunxtand",
+  "license": "ISC"
+}
