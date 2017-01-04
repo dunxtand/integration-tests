@@ -8,13 +8,18 @@
     "babel-preset-es2015": "^6.18.0",
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
+    "wdio-mocha-framework": "^0.5.8",
     "webdriverio": "^4.5.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "wdio-dot-reporter": "0.0.6",
+    "wdio-mocha-framework": "^0.5.8",
+    "wdio-spec-reporter": "0.0.5"
+  },
   "scripts": {
     "start": "java -jar -Dwebdriver.geckodriver.driver=geckodriver.exe selenium-server-standalone-3.0.1.jar",
-    "example": "node test.js",
-    "test": "mocha --compilers js:babel-core/register --recursive"
+    "example": "node example.js",
+    "test": "wdio wdio.conf.js"
   },
   "author": "dunxtand",
   "license": "ISC"
