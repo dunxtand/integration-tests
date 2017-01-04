@@ -16,6 +16,14 @@ exports.config = {
     exclude: [
         // 'path/to/excluded/files'
     ],
+    // suites
+    suites: {
+      us: ['./test/specs/US/*.js'],
+      gb: ['./test/specs/GB/*.js'],
+      de: ['./test/specs/DE/*.js'],
+      eu: ['./test/specs/EU/*.js'],
+      au: ['./test/specs/AU/*.js']
+    },
     //
     // ============
     // Capabilities
