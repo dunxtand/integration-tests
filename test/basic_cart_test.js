@@ -1,9 +1,9 @@
-const { US, GB, DE, EU, AU } = require("../../values/baseUrls")
-const cartSelectors = require("../../values/cartSelectors")
+const { US, GB, DE, EU, AU } = require("../values/baseUrls")
+const cartSelectors = require("../values/cartSelectors")
 const {
   countryPopup, countryPopupClose,
   cookiePopup, cookiePopupClose
-} = require("../../values/general")
+} = require("../values/general")
 
 describe("basic cart actions", () => {
 
