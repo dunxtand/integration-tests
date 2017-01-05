@@ -23,8 +23,7 @@ exports.config = {
       de: ['./test/DE/*.js'],
       eu: ['./test/EU/*.js'],
       au: ['./test/AU/*.js'],
-      trans: ['./test/**/translation_file_test.js'],
-      cart: ['./test/**/translation_file_test.js']
+      dev: ['./test/US/offers_test.js']
     },
     //
     // ============
@@ -134,7 +133,8 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts: {
-        ui: 'bdd'
+        ui: 'bdd',
+        timeout: 20000
     },
     //
     // =====

@@ -1,7 +1,8 @@
 module.exports = {
   optinSelectors: {
-    button: ".shop-page-opt-in",
-    successShouldInclude: "success-container"
+    optinButton: ".shop-page-opt-in",
+    successClass: ".optin-monster-saas-image",
+    optinClose: ".om-close"
   },
   productSelectors: {
     addToCart: "#AddToCart",

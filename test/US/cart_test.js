@@ -15,7 +15,9 @@ describe(`shopping cart functionality at ${baseUrl}`, () => {
   const { addToCart, productNameSelector, quantitySelector } = productSelectors
   const { checkoutProductContainer, checkoutProductName } = checkoutSelectors
   const checkoutPageTitle = checkoutSelectors.checkoutPageTitles.US
-  var firstProductName
+  var firstProductName = ""
+
+  console.log(browser.options)
 
   it("has basic open and close", () => {
     browser.url(baseUrl)
