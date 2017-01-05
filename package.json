@@ -19,12 +19,14 @@
   "scripts": {
     "start": "java -jar -Dwebdriver.geckodriver.driver=geckodriver.exe selenium-server-standalone-3.0.1.jar",
     "example": "node example.js",
-    "test": "wdio wdio.conf.js",
+    "test": "",
     "us": "wdio wdio.conf.js --suite us",
     "gb": "wdio wdio.conf.js --suite gb",
     "de": "wdio wdio.conf.js --suite de",
     "eu": "wdio wdio.conf.js --suite eu",
-    "au": "wdio wdio.conf.js --suite au"
+    "au": "wdio wdio.conf.js --suite au",
+    "trans": "wdio wdio.conf.js --suite trans",
+    "cart": "wdio wdio.conf.js --suite cart"
   },
   "author": "dunxtand",
   "license": "ISC"

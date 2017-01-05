@@ -5,7 +5,7 @@ module.exports = {
   kids: "/collections/kids",
   athletic: "/collections/athletic",
   adults: "/collections/adults",
-  metallics: "/collections/metallic",
+  metallic: "/collections/metallic",
   giftCard: "/products/gift-card",
   asSeenOn: "/blogs/as-seen-on",
   howItWorks: "/pages/how-it-works",

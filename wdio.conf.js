@@ -10,7 +10,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/specs/*.js'
+        './test/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -18,11 +18,13 @@ exports.config = {
     ],
     // suites
     suites: {
-      us: ['./test/specs/US/*.js'],
-      gb: ['./test/specs/GB/*.js'],
-      de: ['./test/specs/DE/*.js'],
-      eu: ['./test/specs/EU/*.js'],
-      au: ['./test/specs/AU/*.js']
+      us: ['./test/US/*.js'],
+      gb: ['./test/GB/*.js'],
+      de: ['./test/DE/*.js'],
+      eu: ['./test/EU/*.js'],
+      au: ['./test/AU/*.js'],
+      trans: ['./test/**/translation_file_test.js'],
+      cart: ['./test/**/translation_file_test.js']
     },
     //
     // ============

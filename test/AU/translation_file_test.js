@@ -1,11 +1,11 @@
-const baseUrl = require("../../values/baseUrls").US
+const baseUrl = require("../../values/baseUrls").AU
 const {
-  home, h1, h2, kids, giftCard, asSeenOn, howItWorks,
-  support, ourStory, ambassadors, wholesale
+  home, athletic, metallic, asSeenOn,
+  howItWorks, ourStory
 } = require("../../values/pageUrls")
 const pagesToCheck = [
-  home, h1, h2, kids, giftCard, asSeenOn, howItWorks,
-  support, ourStory, ambassadors, wholesale
+  home, athletic, metallic, asSeenOn,
+  howItWorks, ourStory
 ]
 const { translationMissing } = require("../../values/general")
 

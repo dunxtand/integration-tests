@@ -1,8 +1,12 @@
-const baseUrl = require("../../values/baseUrls").US
+const baseUrl = require("../../values/baseUrls").GB
 const cartSelectors = require("../../values/cartSelectors")
 const { productSelectors, swatchSelectors } = require("../../values/shopPageSelectors")
 const checkoutSelectors = require("../../values/checkoutSelectors")
 const pageUrls = require("../../values/pageUrls")
+const {
+  countryPopup, countryPopupClose,
+  cookiePopup, cookiePopupClose
+} = require("../../values/general")
 
 describe(`shopping cart functionality at ${baseUrl}`, () => {
   const {
@@ -14,11 +18,14 @@ describe(`shopping cart functionality at ${baseUrl}`, () => {
   } = cartSelectors
   const { addToCart, productNameSelector, quantitySelector } = productSelectors
   const { checkoutProductContainer, checkoutProductName } = checkoutSelectors
-  const checkoutPageTitle = checkoutSelectors.checkoutPageTitles.US
+  const checkoutPageTitle = checkoutSelectors.checkoutPageTitles.GB
   var firstProductName
 
   it("has basic open and close", () => {
     browser.url(baseUrl)
+    browser.pause(1500)
+    browser.click(countryPopupClose)
+    browser.click(cookiePopupClose)
     expect(browser.isVisible(cartContainer)).to.equal(false)
     browser.click(openCart)
     browser.pause(500)
@@ -29,7 +36,7 @@ describe(`shopping cart functionality at ${baseUrl}`, () => {
   })
 
   it("cart opens when items are added", () => {
-    let page = baseUrl + pageUrls.h1
+    let page = baseUrl + pageUrls.athletic
     browser.url(page)
     browser.click(addToCart)
     browser.pause(1500)
@@ -64,7 +71,7 @@ describe(`shopping cart functionality at ${baseUrl}`, () => {
   })
 
   it("adds a second item to the cart", () => {
-    let page = baseUrl + pageUrls.h2
+    let page = baseUrl + pageUrls.athletic + "/products/h1-white" // make metallics when back in stock
     browser.url(page)
     browser.click(addToCart)
     browser.pause(1500)
