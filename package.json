@@ -19,7 +19,7 @@
   "scripts": {
     "start": "java -jar -Dwebdriver.geckodriver.driver=geckodriver.exe selenium-server-standalone-3.0.1.jar",
     "example": "node example.js",
-    "test": "",
+    "test": "wdio wdio.conf.js",
     "us": "wdio wdio.conf.js --suite us",
     "gb": "wdio wdio.conf.js --suite gb",
     "de": "wdio wdio.conf.js --suite de",
