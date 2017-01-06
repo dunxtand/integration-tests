@@ -4,4 +4,4 @@ download selenium standalone server:
 
 geckodriver at https://github.com/mozilla/geckodriver/releases
 
-(geckodriver.exe should be in the root of the project)
+(geckodriver executable should be in the root of the project)
