@@ -23,7 +23,7 @@ exports.config = {
       de: ['./test/DE/*.js'],
       eu: ['./test/EU/*.js'],
       au: ['./test/AU/*.js'],
-      dev: ['./test/GB/offers_test.js']
+      dev: ['./test/EU/offers_test.js']
     },
     //
     // ============
