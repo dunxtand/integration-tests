@@ -2,8 +2,12 @@ const baseUrl = require("../../values/baseUrls").US
 const urlSegment = require("../../values/pageUrls").h1
 const { productSelectors, optinSelectors } = require("../../values/shopPageSelectors")
 const {
+  checkoutDiscountInput, discountErrorElement, submitDiscountCode
+} = require("../../values/checkoutSelectors")
+const {
   productCountPlus, productCountMinus,
-  productTitle, closeCart
+  productCount, productTitle, closeCart, openCart,
+  checkout
 } = require("../../values/cartSelectors")
 const {
   freePackEnabled, freePackThreshold, freePackTitle,
@@ -15,8 +19,8 @@ describe(`discounts and offers for ${baseUrl}`, () => {
 
   describe(`buy ${freePackThreshold} get 1 free`, () => {
     const { addToCart } = productSelectors
-    var productPlus, productMinus
-    const url = baseUrl + urlSegment; browser.url(url)
+    const url = baseUrl + urlSegment
+    browser.url(url)
 
     it(`adds ${freePackTitle} to the cart after ${freePackThreshold} packs`, () => {
       browser.click(addToCart)
@@ -25,45 +29,58 @@ describe(`discounts and offers for ${baseUrl}`, () => {
         browser.click(productCountPlus)
         browser.pause(1500)
       }
+      browser.pause(2000)
       let freePackName = browser.getText(productTitle)[0].toLowerCase()
+      let freePackCount = browser.getValue(productCount)[0]
       expect(freePackName).to.equal(freePackTitle)
+      expect(freePackCount).to.equal("1")
     })
 
+
     it(`adds 2 ${freePackTitle} to the cart after ${freePackThreshold*2} packs`, () => {
-      let newPlusSelector = productCountPlus + ":nth-of-type(2)"
-      for (var i=0; i<(freePackThreshold); ++i) {
-        browser.click(newPlusSelector)
+      for (var i=0; i<freePackThreshold; ++i) {
+        browser.elements(productCountPlus).value[1].click()
         browser.pause(1500)
       }
+      browser.pause(2000)
+      let freePackCount = browser.getValue(productCount)[0]
+      expect(freePackCount).to.equal("2")
     })
 
     it(`returns to 1 ${freePackTitle} when taken below ${freePackThreshold*2} packs`, () => {
-
+      browser.elements(productCountMinus).value[1].click()
+      browser.pause(2000)
+      let freePackCount = browser.getValue(productCount)[0]
+      expect(freePackCount).to.equal("1")
     })
 
-    it(`removes ${freePackTitle} when taken below ${freePackThreshold} packs`, () => {
-
+    it(`removes ${freePackTitle} completely when taken below ${freePackThreshold} packs`, () => {
+      for (var i=0; i<freePackThreshold; ++i) {
+        browser.elements(productCountMinus).value[1].click()
+        browser.pause(1500)
+      }
+      browser.pause(3000)
+      let firstProductTitle = browser.getText(productTitle).toLowerCase()
+      expect(firstProductTitle).to.not.equal(freePackTitle)
     })
   })
 
-  // this works individually, but not when in the same session as above
-  //
-  // describe("discount popup mailing-list button", () => {
-  //   const { optinButton, successClass, optinClose } = optinSelectors
-  //
-  //   it("displays the correct discount", () => {
-  //     let text = browser.getText(optinButton)
-  //     expect(text.includes(discountPercentage)).to.equal(true)
-  //   })
-  //
-  //   it("reveals the popup when clicked", () => {
-  //     expect(browser.isVisible(successClass)[1]).to.equal(false)
-  //     browser.click(optinButton)
-  //     browser.pause(2000)
-  //     expect(browser.isVisible(successClass)[1]).to.equal(true)
-  //     // browser.click(optinClose)
-  //     // browser.pause(1000)
-  //     // expect(browser.isVisible(successClass)[1]).to.equal(false)
-  //   })
-  // })
+  describe("mailing-list discount", () => {
+    const { optinButton, successClass, optinClose } = optinSelectors
+    browser.pause(3000)
+
+    it("correct discount displays on the optin button", () => {
+      let text = browser.getText(optinButton)
+      expect(text.includes(discountPercentage)).to.equal(true)
+    })
+
+    it("discount code works at checkout", () => {
+      browser.click(checkout)
+      browser.pause(5000)
+      browser.setValue(checkoutDiscountInput, discountCode)
+      browser.click(submitDiscountCode)
+      browser.pause(2000)
+      expect(browser.isVisible(discountErrorElement)).to.equal(false)
+    })
+  })
 })
