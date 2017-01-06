@@ -1,5 +1,5 @@
-const baseUrl = require("../../values/baseUrls").US
-const urlSegment = require("../../values/pageUrls").h1
+const baseUrl = require("../../values/baseUrls").GB
+const urlSegment = require("../../values/pageUrls").athletic
 const { productSelectors, optinSelectors } = require("../../values/shopPageSelectors")
 const {
   checkoutDiscountInput, discountErrorElement, submitDiscountCode
@@ -12,7 +12,11 @@ const {
 const {
   freePackEnabled, freePackThreshold, freePackTitle,
   discountPercentage, discountCode
-} = require("../../values/offers/US")
+} = require("../../values/offers/GB")
+const {
+  countryPopup, countryPopupClose,
+  cookiePopup, cookiePopupClose
+} = require("../../values/general")
 
 describe(`discounts and offers for ${baseUrl}`, () => {
   const url = baseUrl + urlSegment
@@ -23,6 +27,10 @@ describe(`discounts and offers for ${baseUrl}`, () => {
     browser.url(url)
 
     it(`adds ${freePackTitle} to the cart after ${freePackThreshold} packs`, () => {
+      browser.waitForExist(countryPopup)
+      browser.waitForExist(cookiePopup, 4000)
+      browser.click(countryPopupClose)
+      browser.click(cookiePopupClose)
       browser.click(addToCart)
       browser.pause(1500)
       for (var i=0; i<(freePackThreshold-1); ++i) {
@@ -76,7 +84,7 @@ describe(`discounts and offers for ${baseUrl}`, () => {
 
     it("discount code works at checkout", () => {
       browser.click(checkout)
-      browser.pause(5000)
+      browser.pause(7000)
       browser.setValue(checkoutDiscountInput, discountCode)
       browser.click(submitDiscountCode)
       browser.pause(4000)
