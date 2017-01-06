@@ -25,3 +25,15 @@ run site tests for US, the UK, the EU, Germany, and Australia, respectively:
     npm run de
 
     npm run au
+
+run cart tests for all sites:
+
+    npm run cart
+
+run offers tests for all sites:
+
+    npm run offers
+
+run translation file tests for all sites:
+
+    npm run trans
