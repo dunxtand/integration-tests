@@ -25,6 +25,9 @@
     "de": "wdio wdio.conf.js --suite de",
     "eu": "wdio wdio.conf.js --suite eu",
     "au": "wdio wdio.conf.js --suite au",
+    "cart": "wdio wdio.conf.js --suite cart",
+    "offers": "wdio wdio.conf.js --suite offers",
+    "trans": "wdio wdio.conf.js --suite trans",
     "dev": "wdio wdio.conf.js --suite dev"
   },
   "author": "dunxtand",

@@ -23,6 +23,9 @@ exports.config = {
       de: ['./test/DE/*.js'],
       eu: ['./test/EU/*.js'],
       au: ['./test/AU/*.js'],
+      cart: ['./test/**/cart_test.js'],
+      offers: ['./test/**/offers_test.js'],
+      trans: ['./test/**/translation_file_test.js'],
       dev: ['./test/AU/offers_test.js']
     },
     //
