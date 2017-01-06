@@ -5,3 +5,23 @@ download selenium standalone server:
 geckodriver at https://github.com/mozilla/geckodriver/releases
 
 (geckodriver executable should be in the root of the project)
+
+start selenium server:
+
+    npm start
+
+run all tests:
+
+    npm test
+
+run site tests for US, the UK, the EU, Germany, and Australia, respectively:
+
+    npm run us
+
+    npm run gb
+
+    npm run eu
+
+    npm run de
+
+    npm run au
