@@ -1,9 +1,14 @@
 const baseUrl = require("../../values/baseUrls").US
 const urlSegment = require("../../values/pageUrls").support
+const { search, ticket } = require("../../values/supportPageSelectors")
 const {
   searchForm, searchInput, resultsContainer,
   resultsList, hasResults, noResults
-} = require("../../values/supportPageSelectors").search
+} = search
+const {
+  form, nameInput, emailInput,
+  reasonSelect, detailsTextarea, submit
+} = ticket
 
 describe(`support page functionality for ${baseUrl}`, () => {
   browser.url(baseUrl + urlSegment)
