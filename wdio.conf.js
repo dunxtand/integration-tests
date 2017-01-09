@@ -26,7 +26,7 @@ exports.config = {
       cart: ['./test/**/cart_test.js'],
       offers: ['./test/**/offers_test.js'],
       trans: ['./test/**/translation_file_test.js'],
-      dev: ['./test/AU/offers_test.js']
+      dev: ['./test/US/support_search_test.js']
     },
     //
     // ============

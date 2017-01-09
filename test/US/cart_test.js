@@ -17,8 +17,6 @@ describe(`shopping cart functionality at ${baseUrl}`, () => {
   const checkoutPageTitle = checkoutSelectors.checkoutPageTitles.US
   var firstProductName = ""
 
-  console.log(browser.options)
-
   it("has basic open and close", () => {
     browser.url(baseUrl)
     expect(browser.isVisible(cartContainer)).to.equal(false)
@@ -73,7 +71,6 @@ describe(`shopping cart functionality at ${baseUrl}`, () => {
     expect(browser.isVisible(cartContainer)).to.equal(true)
     let count = browser.elements(productContainer).value.length
     expect(count).to.equal(2)
-    console.log(browser.elements(quantitySelector))
   })
 
   it("goes to the checkout from the cart", () => {

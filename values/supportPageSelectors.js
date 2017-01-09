@@ -1,6 +1,7 @@
 module.exports = {
   link: "#questions-btn",
   search: {
+    searchForm: "#support-search-form",
     searchInput: "#support-search-bar",
     resultsContainer: "#support-results-div",
     resultsList: "#results-list",
