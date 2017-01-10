@@ -35,7 +35,7 @@ describe(`shopping cart functionality at ${baseUrl}`, () => {
   })
 
   it("cart opens when items are added", () => {
-    let page = baseUrl + pageUrls.athletic + "/products/h1-grey" // remove when black in stock
+    let page = baseUrl + pageUrls.athletic
     browser.url(page)
     browser.click(addToCart)
     browser.pause(1500)
