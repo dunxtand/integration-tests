@@ -37,7 +37,7 @@ describe(`discounts and offers for ${baseUrl}`, () => {
         browser.click(productCountPlus)
         browser.pause(1500)
       }
-      browser.pause(2000)
+      browser.pause(3500)
       let freePackName = browser.getText(productTitle)[0].toLowerCase()
       let freePackCount = browser.getValue(productCount)[0]
       expect(freePackName).to.equal(freePackTitle)
@@ -50,14 +50,14 @@ describe(`discounts and offers for ${baseUrl}`, () => {
         browser.elements(productCountPlus).value[1].click()
         browser.pause(1500)
       }
-      browser.pause(2000)
+      browser.pause(3500)
       let freePackCount = browser.getValue(productCount)[0]
       expect(freePackCount).to.equal("2")
     })
 
     it(`returns to 1 ${freePackTitle} when taken below ${freePackThreshold*2} packs`, () => {
       browser.elements(productCountMinus).value[1].click()
-      browser.pause(2000)
+      browser.pause(3500)
       let freePackCount = browser.getValue(productCount)[0]
       expect(freePackCount).to.equal("1")
     })
@@ -67,7 +67,7 @@ describe(`discounts and offers for ${baseUrl}`, () => {
         browser.elements(productCountMinus).value[1].click()
         browser.pause(1500)
       }
-      browser.pause(3000)
+      browser.pause(3500)
       let firstProductTitle = browser.getText(productTitle).toLowerCase()
       expect(firstProductTitle).to.not.equal(freePackTitle)
     })
