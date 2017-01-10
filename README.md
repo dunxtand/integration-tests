@@ -2,9 +2,11 @@ download selenium standalone server:
 
     curl -O http://selenium-release.storage.googleapis.com/3.0/selenium-server-standalone-3.0.1.jar
 
-geckodriver at https://github.com/mozilla/geckodriver/releases
+download geckodriver for osx:
 
-(geckodriver executable should be in the root of the project)
+    curl -L https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-macos.tar.gz | tar xz
+
+...or find other versions at https://github.com/mozilla/geckodriver/releases (executable named 'geckodriver' should be in the root of the project)
 
 start selenium server:
 
