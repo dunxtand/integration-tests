@@ -17,7 +17,7 @@
     "wdio-spec-reporter": "0.0.5"
   },
   "scripts": {
-    "start": "java -jar -Dwebdriver.geckodriver.driver=geckodriver.exe selenium-server-standalone-3.0.1.jar",
+    "start": "java -jar -Dwebdriver.geckodriver.driver=geckodriver selenium-server-standalone-3.0.1.jar",
     "example": "node example.js",
     "test": "wdio wdio.conf.js",
     "us": "wdio wdio.conf.js --suite us",
