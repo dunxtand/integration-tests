@@ -16,7 +16,7 @@ install WebdriverIO globally to be able to use the 'wdio' command (npm scripts r
 
     npm install -g webdriverio
 
-start selenium server:
+start selenium server (make sure you have Java installed and available first):
 
     npm start
 
