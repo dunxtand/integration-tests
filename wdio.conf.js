@@ -19,7 +19,7 @@ exports.config = {
     // suites
     suites: {
       us: ['./test/US/*.js'],
-      gb: ['./test/GB/*.js'],
+      uk: ['./test/UK/*.js'],
       de: ['./test/DE/*.js'],
       eu: ['./test/EU/*.js'],
       au: ['./test/AU/*.js'],

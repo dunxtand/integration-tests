@@ -21,7 +21,7 @@
     "example": "node example.js",
     "test": "wdio wdio.conf.js",
     "us": "wdio wdio.conf.js --suite us",
-    "gb": "wdio wdio.conf.js --suite gb",
+    "uk": "wdio wdio.conf.js --suite uk",
     "de": "wdio wdio.conf.js --suite de",
     "eu": "wdio wdio.conf.js --suite eu",
     "au": "wdio wdio.conf.js --suite au",

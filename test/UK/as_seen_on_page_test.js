@@ -1,4 +1,4 @@
-const baseUrl = require("../../values/baseUrls").GB
+const baseUrl = require("../../values/baseUrls").UK
 const urlSegment = require("../../values/pageUrls").asSeenOn
 const { articleLink, viewTheLookLink } = require("../../values/asSeenOnPageSelectors")
 const { notFound } = require("../../values/general")

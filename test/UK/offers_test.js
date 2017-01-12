@@ -1,4 +1,4 @@
-const baseUrl = require("../../values/baseUrls").GB
+const baseUrl = require("../../values/baseUrls").UK
 const urlSegment = require("../../values/pageUrls").athletic
 const { productSelectors, optinSelectors } = require("../../values/shopPageSelectors")
 const {
@@ -12,7 +12,7 @@ const {
 const {
   freePackEnabled, freePackThreshold, freePackTitle,
   discountPercentage, discountCode
-} = require("../../values/offers/GB")
+} = require("../../values/offers/UK")
 const {
   countryPopup, countryPopupClose,
   cookiePopup, cookiePopupClose

@@ -1,4 +1,4 @@
-const baseUrl = require("../../values/baseUrls").GB
+const baseUrl = require("../../values/baseUrls").UK
 const cartSelectors = require("../../values/cartSelectors")
 const { productSelectors, swatchSelectors } = require("../../values/shopPageSelectors")
 const checkoutSelectors = require("../../values/checkoutSelectors")
@@ -18,7 +18,7 @@ describe(`shopping cart functionality at ${baseUrl}`, () => {
   } = cartSelectors
   const { addToCart, productNameSelector, quantitySelector } = productSelectors
   const { checkoutProductContainer, checkoutProductName } = checkoutSelectors
-  const checkoutPageTitle = checkoutSelectors.checkoutPageTitles.GB
+  const checkoutPageTitle = checkoutSelectors.checkoutPageTitles.UK
   var firstProductName
 
   it("has basic open and close", () => {

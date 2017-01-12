@@ -1,4 +1,4 @@
-const baseUrl = require("../../values/baseUrls").GB
+const baseUrl = require("../../values/baseUrls").UK
 const {
   home, athletic, metallic, asSeenOn,
   howItWorks, ourStory, ambassadors, wholesale
