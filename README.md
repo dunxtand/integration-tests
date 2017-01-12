@@ -8,6 +8,14 @@ download geckodriver for osx:
 
 ...or find other versions at https://github.com/mozilla/geckodriver/releases (executable named 'geckodriver' should be in the root of the project)
 
+install necessary packages:
+
+    npm install
+
+install WebdriverIO globally to be able to use the 'wdio' command (npm scripts rely on it):
+
+    npm install -g webdriverio
+
 start selenium server:
 
     npm start
