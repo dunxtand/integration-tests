@@ -47,3 +47,7 @@ run offers tests for all sites:
 run translation file tests for all sites:
 
     npm run trans
+
+run As Seen On page tests for all sites:
+
+    npm run seenon

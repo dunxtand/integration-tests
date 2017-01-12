@@ -26,7 +26,8 @@ exports.config = {
       cart: ['./test/**/cart_test.js'],
       offers: ['./test/**/offers_test.js'],
       trans: ['./test/**/translation_file_test.js'],
-      dev: ['./test/US/as_seen_on_page_test.js']
+      seenon: ['./test/**/as_seen_on_page_test.js'],
+      dev: ['./test/DE/as_seen_on_page_test.js']
     },
     //
     // ============
