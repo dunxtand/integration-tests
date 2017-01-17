@@ -1,7 +1,7 @@
 const baseUrl = require("../../values/baseUrls").US
 const urlSegment = require("../../values/pageUrls").asSeenOn
 const { articleLink, viewTheLookLink } = require("../../values/asSeenOnPageSelectors")
-const { notFound } = require("../../values/general")
+const { notFoundEnglish } = require("../../values/general")
 
 describe(`As Seen On page links for ${baseUrl}`, function () {
   browser.url(baseUrl + urlSegment)
@@ -19,7 +19,7 @@ describe(`As Seen On page links for ${baseUrl}`, function () {
       getUrls(elements).forEach(url => {
         browser.url(url)
         let text = browser.getText("body").toLowerCase()
-        expect(text.includes(notFound)).to.equal(false)
+        expect(text.includes(notFoundEnglish)).to.equal(false)
       })
     })
 
