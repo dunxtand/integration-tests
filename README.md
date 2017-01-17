@@ -7,7 +7,7 @@ and [Australia](https://www.hickies.com.au).
 
 ### Requirements
 
- These tests use **Node.js**, **Java**, and **npm** to run.
+The tests use **Node.js**, **npm**, **Java**, and **Firefox 50**.
 
 ### Setup
 
