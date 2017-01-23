@@ -1,10 +1,10 @@
 const baseUrl = require("../../values/baseUrls").UK
 const {
-  home, athletic, metallic, asSeenOn,
+  home, athletic, metallic, asSeenOn, support,
   howItWorks, ourStory, ambassadors, wholesale
 } = require("../../values/pageUrls")
 const pagesToCheck = [
-  home, athletic, metallic, asSeenOn,
+  home, athletic, metallic, asSeenOn, support,
   howItWorks, ourStory, ambassadors, wholesale
 ]
 const { translationMissing } = require("../../values/general")
