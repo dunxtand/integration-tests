@@ -17,6 +17,7 @@ module.exports = {
     submit: "#ticket-extras button",
     popup: "#support-ticket-popup",
     popupClose: ".mfp-close",
+    errorMessageSelector: ".support-ticket-error",
     errorMessages: {
       blankName: "name can't be blank",
       blankEmail: "email can't be blank",

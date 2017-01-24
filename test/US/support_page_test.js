@@ -33,7 +33,8 @@ describe(`support page functionality for ${baseUrl}`, () => {
   describe("ZenDesk ticket submission", () => {
     const {
       form, nameInput, emailInput, reasonSelect,
-      detailsTextarea, submit, popup, popupClose
+      detailsTextarea, submit, popup, popupClose,
+      errorMessageSelector
     } = ticket
     const {
       blankName, blankEmail, invalidEmail,
@@ -45,7 +46,6 @@ describe(`support page functionality for ${baseUrl}`, () => {
         name = "Duncan Standish",
         email = "duncan@hickies.com",
         details = "Where are my shoes?"
-    let errorMessageSelector = popup + " p"
 
     it("rejects an unselected reason field", () => {
       browser.setValue(nameInput, name)
@@ -55,7 +55,7 @@ describe(`support page functionality for ${baseUrl}`, () => {
       let errorMessage = browser.getText(errorMessageSelector)
       expect(errorMessage).to.equal(noReason)
     })
-    
+
     it("rejects a blank name field", () => {
       browser.click(popupClose)
       browser.selectByIndex(reasonSelect, 1)
