@@ -9,7 +9,7 @@ module.exports = {
     quantitySelector: "#Quantity",
     increaseQty: ".js-qty__adjust--minus",
     decreaseQty: ".js-qty__adjust--plus",
-    productNameSelector: "#color_selector"
+    productNameSelector: "#product-name"
   },
   tabSelectors: {
     link: ".tab-link",
