@@ -14,4 +14,4 @@ var vDayOffers = {
   discountCode: "VDAY17"
 }
 
-module.exports = vDayOffers
+module.exports = regularOffers;

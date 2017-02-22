@@ -3,7 +3,7 @@ var regularOffers = {
   freePackEnabled: true,
   freePackThreshold: 3,
   discountPercentage: "10",
-  discountCode: "EXTRA10"
+  discountCode: "SAVE10"
 }
 
 var vDayOffers = {
@@ -14,4 +14,4 @@ var vDayOffers = {
   discountCode: "VDAY17"
 }
 
-module.exports = vDayOffers
+module.exports = regularOffers;
