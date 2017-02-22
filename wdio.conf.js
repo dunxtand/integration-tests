@@ -27,7 +27,7 @@ exports.config = {
       offers: ['./test/**/offers_test.js'],
       trans: ['./test/**/translation_file_test.js'],
       seenon: ['./test/**/as_seen_on_page_test.js'],
-      dev: ['./test/UK/support_page_test.js']
+      dev: ['./test/AU/offers_test.js']
     },
     //
     // ============
