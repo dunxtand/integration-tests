@@ -29,6 +29,7 @@
     "offers": "wdio wdio.conf.js --suite offers",
     "trans": "wdio wdio.conf.js --suite trans",
     "seenon": "wdio wdio.conf.js --suite seenon",
+    "sitesearch": "wdio wdio.conf.js --suite sitesearch",
     "dev": "wdio wdio.conf.js --suite dev"
   },
   "author": "dunxtand",
