@@ -1,1 +1,1 @@
-require("../offers_test")("US", false, false);
+require("../offers_test")("US");

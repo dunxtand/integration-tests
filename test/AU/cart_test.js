@@ -1,1 +1,1 @@
-require("../cart_test")("AU", "/collections/h2", true, false);
+require("../cart_test")("AU", "/collections/h2");

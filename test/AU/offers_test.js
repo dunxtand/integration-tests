@@ -1,1 +1,1 @@
-require("../offers_test")("AU", true, false);
+require("../offers_test")("AU");

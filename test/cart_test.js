@@ -1,4 +1,3 @@
-const baseUrls = require("../values/baseUrls");
 const cartSelectors = require("../values/cartSelectors");
 const { productSelectors, swatchSelectors } = require("../values/shopPageSelectors");
 const checkoutSelectors = require("../values/checkoutSelectors");
@@ -14,8 +13,8 @@ const {
 const { addToCart, productNameSelector, quantitySelector } = productSelectors;
 const { checkoutProductContainer, checkoutProductName } = checkoutSelectors;
 
-module.exports = function (site, secondProductSegment, hasCountryPopup, hasCookiePopup) {
-  const baseUrl = baseUrls[site];
+module.exports = function (site, secondProductSegment) {
+  const baseUrl = getBaseUrl(site);
   const checkoutPageTitle = checkoutSelectors.checkoutPageTitles[site];
   var firstProductName = "";
 

@@ -1,8 +1,8 @@
 const missingTransMessage = require("../values/general").translationMissing;
-const baseUrls = require("../values/baseUrls");
 
-module.exports = function (site, urlSegments) {
-  const baseUrl = baseUrls[site];
+module.exports = function (site) {
+  const baseUrl = getBaseUrl(site);
+  const urlSegments = getActivePages(site);
   describe(`no missing text at ${baseUrl} for:`, function () {
     urlSegments.forEach(seg => {
       let url = baseUrl + seg;

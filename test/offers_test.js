@@ -1,4 +1,3 @@
-const baseUrls = require("../values/baseUrls");
 const urlSegment = require("../values/pageUrls").h1;
 const { productSelectors, optinSelectors } = require("../values/shopPageSelectors");
 const {
@@ -11,8 +10,8 @@ const {
 } = require("../values/cartSelectors");
 const closePopups = require("../helpers/closePopups");
 
-module.exports = function (site, hasCountryPopup, hasCookiePopup) {
-  const baseUrl = baseUrls[site];
+module.exports = function (site) {
+  const baseUrl = getBaseUrl(site);
   const {
     freePackEnabled, freePackThreshold, freePackTitle,
     discountPercentage, discountCode

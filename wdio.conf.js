@@ -28,7 +28,7 @@ exports.config = {
       trans: ['./test/**/translation_file_test.js'],
       seenon: ['./test/**/as_seen_on_page_test.js'],
       sitesearch: ['./test/**/site_search_test.js'],
-      dev: ['./test/UK/site_search_test.js']
+      dev: ['./test/US/translation_file_test.js']
     },
     //
     // ============
@@ -162,9 +162,13 @@ exports.config = {
     // Gets executed before test execution begins. At this point you can access all global
     // variables, such as `browser`. It is the perfect place to define custom commands.
     before: function (capabilities, specs) {
-      var chai = require("chai")
-      global.expect = chai.expect
-      chai.Should()
+      var chai = require("chai");
+      global.expect = chai.expect;
+      chai.Should();
+      global.closePopups = require("./helpers/closePopups");
+      var urlHelper = require("./helpers/urlHelper");
+      global.getBaseUrl = urlHelper.getBaseUrl;
+      global.getActivePages = urlHelper.getActivePages;
     },
     //
     // Hook that gets executed before the suite starts

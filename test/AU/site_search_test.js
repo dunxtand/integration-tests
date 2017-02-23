@@ -1,1 +1,1 @@
-require("../site_search_test")("AU", true, false);
+require("../site_search_test")("AU");

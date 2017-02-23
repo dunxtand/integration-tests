@@ -1,10 +1,9 @@
-const baseUrls = require("../values/baseUrls");
 const urlSegment = require("../values/pageUrls").asSeenOn;
 const { articleLink, viewTheLookLink } = require("../values/asSeenOnPageSelectors");
 const { notFoundEnglish, notFoundGerman } = require("../values/general");
 
-module.exports = function(site) {
-  const baseUrl = baseUrls[site];
+module.exports = function (site) {
+  const baseUrl = getBaseUrl(site);
   const notFoundMessage = site === "DE" ? notFoundGerman : notFoundEnglish;
 
   describe(`As Seen On page links for ${baseUrl}`, function () {

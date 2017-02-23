@@ -1,4 +1,3 @@
-const baseUrls = require("../values/baseUrls");
 const urlSegment = require("../values/pageUrls").support;
 const { search, ticket } = require("../values/supportPageSelectors");
 const {
@@ -16,7 +15,7 @@ const {
 } = ticket.errorMessages;
 
 module.exports = function (site) {
-  const baseUrl = baseUrls[site];
+  const baseUrl = getBaseUrl(site);
 
   describe(`support page functionality for ${baseUrl}`, function () {
     browser.url(baseUrl + urlSegment);

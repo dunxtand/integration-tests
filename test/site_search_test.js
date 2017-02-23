@@ -1,12 +1,10 @@
-const baseUrls = require("../values/baseUrls");
 const {
   popup, link, form, input,
   results, failure, noResultsMessage
 } = require("../values/siteSearchSelectors");
-const closePopups = require("../helpers/closePopups");
 
-module.exports = function (site, hasCountryPopup, hasCookiePopup) {
-  const baseUrl = baseUrls[site];
+module.exports = function (site) {
+  const baseUrl = getBaseUrl(site);
 
   describe(`site search for ${baseUrl}`, function () {
     browser.url(baseUrl);
