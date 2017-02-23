@@ -28,7 +28,7 @@ exports.config = {
       trans: ['./test/**/translation_file_test.js'],
       seenon: ['./test/**/as_seen_on_page_test.js'],
       sitesearch: ['./test/**/site_search_test.js'],
-      dev: ['./test/US/translation_file_test.js']
+      dev: ['./test/run.js']
     },
     //
     // ============

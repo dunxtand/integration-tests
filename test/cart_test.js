@@ -12,6 +12,7 @@ const {
 } = cartSelectors;
 const { addToCart, productNameSelector, quantitySelector } = productSelectors;
 const { checkoutProductContainer, checkoutProductName } = checkoutSelectors;
+const cartTestHelper = require("../helpers/cartTestHelper");
 
 module.exports = function (site, secondProductSegment) {
   const baseUrl = getBaseUrl(site);
@@ -68,7 +69,7 @@ module.exports = function (site, secondProductSegment) {
     });
 
     it("adds a second item to the cart", function () {
-      let page = baseUrl + secondProductSegment;
+      let page = baseUrl + cartTestHelper.getSecondProduct(site);
       browser.url(page);
       browser.click(addToCart);
       browser.pause(1500);

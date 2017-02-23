@@ -7,6 +7,7 @@
     "babel-core": "^6.21.0",
     "babel-preset-es2015": "^6.18.0",
     "chai": "^3.5.0",
+    "cross-env": "^3.1.4",
     "mocha": "^3.2.0",
     "wdio-mocha-framework": "^0.5.8",
     "webdriverio": "^4.5.2"
@@ -30,7 +31,7 @@
     "trans": "wdio wdio.conf.js --suite trans",
     "seenon": "wdio wdio.conf.js --suite seenon",
     "sitesearch": "wdio wdio.conf.js --suite sitesearch",
-    "dev": "wdio wdio.conf.js --suite dev"
+    "dev": "cross-env SITES=UK wdio --suite dev"
   },
   "author": "dunxtand",
   "license": "ISC"

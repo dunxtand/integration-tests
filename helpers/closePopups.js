@@ -28,7 +28,7 @@ const settings = {
 
 module.exports = function (site, browser) {
   if (settings[site].hasCountryPopup) {
-    browser.waitForExist(countryPopup);
+    browser.waitForExist(countryPopup, 2000);
     browser.click(countryPopupClose);
   }
   if (settings[site].hasCookiePopup) {
