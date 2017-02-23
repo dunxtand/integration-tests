@@ -68,3 +68,20 @@ Run translation file tests for all sites:
 Run As Seen On page tests for all sites:
 
     npm run seenon
+
+Run site search tests for all sites:
+
+    npm run sitesearch
+
+When developing a particular test, you can assign it to the **dev** suite:
+
+```javascript
+// in wdio.conf.js:
+suites: {
+  dev: ["./test/US/test_you_are_developing.js"]
+}
+```
+
+...and then run it from the command line:
+
+    npm run dev
