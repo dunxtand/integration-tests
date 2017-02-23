@@ -9,10 +9,7 @@ const {
   productCount, productTitle, closeCart, openCart,
   checkout
 } = require("../values/cartSelectors");
-const {
-  countryPopup, countryPopupClose,
-  cookiePopup, cookiePopupClose
-} = require("../values/general");
+const closePopups = require("../helpers/closePopups");
 
 module.exports = function (site, hasCountryPopup, hasCookiePopup) {
   const baseUrl = baseUrls[site];
@@ -30,8 +27,7 @@ module.exports = function (site, hasCountryPopup, hasCookiePopup) {
       browser.url(url);
 
       it(`adds ${freePackTitle} to the cart after ${freePackThreshold} packs`, function () {
-        if (hasCountryPopup) { closeCountryPopup(browser); }
-        if (hasCookiePopup)  { closeCookiePopup(browser);  }
+        closePopups(site, browser);
         browser.click(addToCart);
         browser.pause(1500);
         for (var i=0; i<(freePackThreshold-1); ++i) {
@@ -93,14 +89,4 @@ module.exports = function (site, hasCountryPopup, hasCookiePopup) {
       })
     })
   })
-}
-
-function closeCountryPopup (browser) {
-  browser.waitForExist(countryPopup);
-  browser.click(countryPopupClose);
-}
-
-function closeCookiePopup (browser) {
-  browser.waitForExist(cookiePopup, 4000);
-  browser.click(cookiePopupClose);
 }

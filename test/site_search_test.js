@@ -3,10 +3,7 @@ const {
   popup, link, form, input,
   results, failure, noResultsMessage
 } = require("../values/siteSearchSelectors");
-const {
-  countryPopup, countryPopupClose,
-  cookiePopup, cookiePopupClose
-} = require("../values/general");
+const closePopups = require("../helpers/closePopups");
 
 module.exports = function (site, hasCountryPopup, hasCookiePopup) {
   const baseUrl = baseUrls[site];
@@ -15,8 +12,7 @@ module.exports = function (site, hasCountryPopup, hasCookiePopup) {
     browser.url(baseUrl);
 
     it("activates popup when link is clicked", function () {
-      if (hasCountryPopup) { closeCountryPopup(browser); }
-      if (hasCookiePopup)  { closeCookiePopup(browser)   }
+      closePopups(site, browser);
       expect(browser.isVisible(popup)).to.equal(false);
       browser.click(link);
       expect(browser.isVisible(popup)).to.equal(true);
@@ -43,14 +39,4 @@ module.exports = function (site, hasCountryPopup, hasCookiePopup) {
     });
 
   });
-}
-
-function closeCountryPopup (browser) {
-  browser.waitForExist(countryPopup);
-  browser.click(countryPopupClose);
-}
-
-function closeCookiePopup (browser) {
-  browser.waitForExist(cookiePopup, 4000);
-  browser.click(cookiePopupClose);
 }

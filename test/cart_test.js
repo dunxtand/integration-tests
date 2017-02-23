@@ -3,10 +3,7 @@ const cartSelectors = require("../values/cartSelectors");
 const { productSelectors, swatchSelectors } = require("../values/shopPageSelectors");
 const checkoutSelectors = require("../values/checkoutSelectors");
 const pageUrls = require("../values/pageUrls");
-const {
-  countryPopup, countryPopupClose,
-  cookiePopup, cookiePopupClose
-} = require("../values/general");
+const closePopups = require("../helpers/closePopups");
 const {
   openCart, closeCart,
   cartContainer, productContainer,
@@ -26,8 +23,7 @@ module.exports = function (site, secondProductSegment, hasCountryPopup, hasCooki
 
     it("has basic open and close", function () {
       browser.url(baseUrl);
-      if (hasCountryPopup) { closeCountryPopup(browser); }
-      if (hasCookiePopup)  { closeCookiePopup(browser);  }
+      closePopups(site, browser);
       expect(browser.isVisible(cartContainer)).to.equal(false);
       browser.click(openCart);
       browser.pause(500);
@@ -105,14 +101,4 @@ module.exports = function (site, secondProductSegment, hasCountryPopup, hasCooki
     });
 
   });
-}
-
-function closeCountryPopup (browser) {
-  browser.waitForExist(countryPopup);
-  browser.click(countryPopupClose);
-}
-
-function closeCookiePopup (browser) {
-  browser.waitForExist(cookiePopup, 4000);
-  browser.click(cookiePopupClose);
 }

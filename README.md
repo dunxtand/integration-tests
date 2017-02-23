@@ -73,6 +73,8 @@ Run site search tests for all sites:
 
     npm run sitesearch
 
+### Development
+
 When developing a particular test, you can assign it to the **dev** suite:
 
 ```javascript
