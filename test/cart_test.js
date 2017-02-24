@@ -95,7 +95,7 @@ module.exports = function (site, secondProductSegment) {
       browser.pause(2000);
       expect(browser.elements(productContainer).value.length).to.equal(1);
       browser.click(productRemove);
-      browser.pause(2000);
+      browser.pause(3000);
       expect(browser.elements(productContainer).value.length).to.equal(0);
     });
 

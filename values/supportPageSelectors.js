@@ -13,7 +13,7 @@ module.exports = {
     nameInput: "#name",
     emailInput: "#email",
     reasonSelect: "#reason",
-    detailsTextarea: "#details",
+    detailsTextarea: "#description",
     submit: "#ticket-extras button",
     popup: "#support-ticket-popup",
     popupClose: ".mfp-close",
