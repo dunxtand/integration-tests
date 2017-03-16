@@ -14,4 +14,12 @@ var vDayOffers = {
   discountCode: "VDAY17"
 }
 
-module.exports = regularOffers;
+var summerOffers = {
+  freePackTitle: "mystery pack",
+  freePackEnabled: true,
+  freePackThreshold: 4,
+  discountPercentage: "20",
+  discountCode: "SUMMER"
+}
+
+module.exports = summerOffers;
