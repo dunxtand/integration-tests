@@ -1,6 +1,6 @@
 var regularOffers = {
   freePackTitle: "mystery pack",
-  freePackEnabled: true,
+  freePackEnabled: false,
   freePackThreshold: 3,
   discountPercentage: "10",
   discountCode: "SAVE10"
