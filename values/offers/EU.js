@@ -14,4 +14,12 @@ var vDayOffers = {
   discountCode: "VDAY17"
 }
 
-module.exports = regularOffers;
+var easterOffers = {
+  freePackTitle: "mystery pack",
+  freePackEnabled: false,
+  freePackThreshold: 3,
+  discountPercentage: "20",
+  discountCode: "EASTER17"
+}
+
+module.exports = easterOffers;
