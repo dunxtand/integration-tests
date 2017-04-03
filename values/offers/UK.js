@@ -22,4 +22,4 @@ var easterOffers = {
   discountCode: "EASTER17"
 }
 
-module.exports = vDayOffers;
+module.exports = easterOffers;

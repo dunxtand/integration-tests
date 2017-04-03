@@ -1,1 +1,1 @@
-require("../cart_test")("UK", "/products/h1-neon-multi");
+require("../cart_test")("UK", "/collections/h2");

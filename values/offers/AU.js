@@ -22,4 +22,4 @@ var summerOffers = {
   discountCode: "SUMMER"
 }
 
-module.exports = summerOffers;
+module.exports = regularOffers;
